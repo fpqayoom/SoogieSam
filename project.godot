@@ -1,0 +1,96 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="SoogeSam"
+config/version="1.0.0"
+run/main_scene="res://Levels/level_1/level_1.tscn"
+config/features=PackedStringArray("4.5", "Mobile")
+run/max_fps=60
+boot_splash/bg_color=Color(-0.014192514, 0.061856247, -0.0049590855, 0.60310423)
+config/icon="res://icon.svg"
+
+[autoload]
+
+scenemanager="*res://00_Global/scene_manager/scene_manager.tscn"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=720
+window/size/borderless=true
+window/size/always_on_top=true
+window/size/transparent=true
+window/size/extend_to_title=true
+window/size/no_focus=true
+window/size/sharp_corners=true
+window/size/minimize_disabled=true
+window/size/maximize_disabled=true
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/qugit/plugin.cfg")
+
+[global_group]
+
+Player=""
+
+[input]
+
+jump={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+])
+}
+down={
+"deadzone": 0.5,
+"events": Array[InputEvent]([Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+])
+}
+
+[input_devices]
+
+virtual_controller/ios/enable_controller=true
+
+[layer_names]
+
+2d_navigation/layer_1="ground"
+2d_navigation/layer_2="one_way_platfrom"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
+
+[xogot]
+
+project/breakpoints={
+"res://Player/player.gd": PackedInt32Array(),
+"res://Player/states/jump.gd": PackedInt32Array(),
+"res://Player/states/player_state_base.gd": PackedInt32Array(),
+"res://addons/qugit/scripts/ui.gd": PackedInt32Array(),
+"res://addons/qutiler/paint_tab.gd": PackedInt32Array(),
+"res://addons/qutiler/select_tab.gd": PackedInt32Array()
+}
+project/editorState=[{
+"column": 60,
+"current": true,
+"line": 27,
+"path": "res://generels/level_transition/level_transition.gd",
+"type": "file"
+}, {
+"column": 23,
+"line": 3,
+"path": "res://00_Global/scene_manager/scene_manager.gd",
+"type": "file"
+}]
+project/disabled_breakpoints={}

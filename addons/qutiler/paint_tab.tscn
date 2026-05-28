@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://vm7k4j0ietk6"]
+
+[ext_resource type="Script" uid="uid://dupojx6h78r1q" path="res://addons/qutiler/paint_tab.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqjv8"]
+content_margin_left = 0.0
+content_margin_top = 25.0
+bg_color = Color(0.5, 0.5, 0.5, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctrwj"]
+content_margin_left = 0.0
+content_margin_top = 25.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udfdq"]
+content_margin_left = 25.0
+bg_color = Color(0.5, 0.5, 0.5, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4mgf"]
+content_margin_left = 25.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+
+[sub_resource type="Theme" id="Theme_ru471"]
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_eqjv8")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_eqjv8")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_eqjv8")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_ctrwj")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_udfdq")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_udfdq")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_udfdq")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_n4mgf")
+
+[node name="PaintTab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="ZoomOut" type="Button" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " - "
+
+[node name="ZoomLbl" type="Label" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"
+
+[node name="ZoomIn" type="Button" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " + "
+
+[node name="VSep" type="VSeparator" parent="VBox/Toolbar"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/Toolbar"]
+layout_mode = 2
+text = "Tool:"
+
+[node name="PropertySelect" type="OptionButton" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Select (For Edit Tab)"
+popup/item_0/id = 0
+popup/item_1/text = "Physics (Add Box)"
+popup/item_1/id = 1
+popup/item_2/text = "Physics (Clear)"
+popup/item_2/id = 2
+
+[node name="Scroll" type="ScrollContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ru471")
+
+[node name="AtlasTexture" type="TextureRect" parent="VBox/Scroll"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 4
