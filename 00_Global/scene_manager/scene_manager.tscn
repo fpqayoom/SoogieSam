@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhckvja3c711y"]
+
+[ext_resource type="Script" uid="uid://yunn67ppeuxj" path="res://00_Global/scene_manager/scene_manager.gd" id="1_kler2"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_kler2")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Test"
